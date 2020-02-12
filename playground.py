@@ -19,8 +19,8 @@ def testBert(x) :
     
     model_class, tokenizer_class, pretrained_weights = (ppb.DistilBertForSequenceClassification, ppb.DistilBertTokenizer, 'distilbert-base-uncased')
     tokenizer = tokenizer_class.from_pretrained(pretrained_weights)  ##load tokenizer
-    model = model_class.from_pretrained(pretrained_weights, num_labels = 5) ## load model
-    model.to(device)
+    # model = model_class.from_pretrained(pretrained_weights, num_labels = 5) ## load model
+    # model.to(device)
     print(2)
     
     ## tokenize data
