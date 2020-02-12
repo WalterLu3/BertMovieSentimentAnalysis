@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 import warnings
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 warnings.filterwarnings('ignore')
-def testBert(x) :     
+def testBert(Batch_Size=32) :     
     device = "cuda:0"
     with open('train.tsv') as file :
         train_read = pd.read_csv(file, sep = '\t')
@@ -72,7 +72,7 @@ def testBert(x) :
     
     ## Convert data into Data Loader for Batch Split
 
-    batch_size = 32
+    batch_size = Batch_Size
 
     # Create the DataLoader for our training set.
     train_data = TensorDataset(train_inputs, train_masks, train_labels)
